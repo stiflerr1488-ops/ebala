@@ -38,6 +38,7 @@
   --card-spotlight-blend: soft-light;
   --btn-glow: rgba(201, 139, 43, 0.45);
   --btn-glow-strong: rgba(201, 139, 43, 0.6);
+  --ripple-color: rgba(255, 255, 255, 0.55);
   --space-1: 12px;
   --space-2: 20px;
   --space-3: 32px;
@@ -87,6 +88,7 @@ body[data-theme="dark"] {
   --card-spotlight-blend: screen;
   --btn-glow: rgba(224, 168, 74, 0.2);
   --btn-glow-strong: rgba(224, 168, 74, 0.3);
+  --ripple-color: rgba(224, 168, 74, 0.35);
   --cta-bg: linear-gradient(135deg, rgba(28, 20, 16, 0.96), rgba(54, 34, 22, 0.98));
   --cta-glow: radial-gradient(circle at 20% 20%, rgba(224, 168, 74, 0.28), rgba(0, 0, 0, 0) 60%),
     radial-gradient(circle at 80% 15%, rgba(224, 168, 74, 0.18), rgba(0, 0, 0, 0) 55%);
@@ -128,6 +130,7 @@ body[data-theme="dark"] {
     --card-spotlight-blend: screen;
     --btn-glow: rgba(224, 168, 74, 0.2);
     --btn-glow-strong: rgba(224, 168, 74, 0.3);
+    --ripple-color: rgba(224, 168, 74, 0.35);
     --cta-bg: linear-gradient(135deg, rgba(28, 20, 16, 0.96), rgba(54, 34, 22, 0.98));
     --cta-glow: radial-gradient(circle at 20% 20%, rgba(224, 168, 74, 0.28), rgba(0, 0, 0, 0) 60%),
       radial-gradient(circle at 80% 15%, rgba(224, 168, 74, 0.18), rgba(0, 0, 0, 0) 55%);
@@ -253,6 +256,13 @@ img {
   box-shadow: 0 1px 0 var(--inner-highlight), 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
+.site-header.is-scrolled {
+  background: color-mix(in srgb, var(--header-bg) 80%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom-color: color-mix(in srgb, var(--hairline) 70%, transparent);
+  box-shadow: 0 1px 0 var(--inner-highlight), 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
 .header-inner {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr) minmax(0, 0.9fr);
@@ -354,6 +364,9 @@ img {
   font-size: 14px;
   transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition), border-color var(--transition);
   letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .btn-primary {
@@ -488,17 +501,29 @@ img {
   --lift: 0px;
   --tx: 0px;
   --ty: 0px;
+  --press-translate-x: 0px;
+  --press-translate-y: 0px;
+  --press-rotate-x: 0deg;
+  --press-rotate-y: 0deg;
   --reveal-y: 10px;
-  transform: translate3d(var(--tx, 0px), calc(var(--lift, 0px) + var(--ty, 0px) + var(--reveal-y, 0px)), 0);
-  transition: opacity 400ms ease, transform 500ms ease, box-shadow var(--transition), border-color var(--transition);
+  --card-press-duration: 500ms;
+  transform: translate3d(var(--tx, 0px), calc(var(--lift, 0px) + var(--ty, 0px) + var(--reveal-y, 0px)), 0)
+    translate3d(var(--press-translate-x, 0px), var(--press-translate-y, 0px), 0)
+    rotateX(var(--press-rotate-x, 0deg)) rotateY(var(--press-rotate-y, 0deg));
+  transition: opacity 400ms ease, transform var(--card-press-duration) ease, box-shadow var(--transition), border-color var(--transition);
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  transform-origin: center;
 }
 
 .card.is-revealed {
   opacity: 1;
   --reveal-y: 0px;
+}
+
+.card.is-pressed {
+  --card-press-duration: 160ms;
 }
 
 .card:hover {
@@ -799,6 +824,35 @@ img {
   transition: width 0.1s ease;
 }
 
+.ripple {
+  position: absolute;
+  width: var(--ripple-size, 10px);
+  height: var(--ripple-size, 10px);
+  left: var(--ripple-x, 50%);
+  top: var(--ripple-y, 50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--ripple-color) 90%, transparent) 0%, transparent 70%);
+  opacity: 0.75;
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple 420ms ease-out forwards;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0.28;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
 .btn-top {
   position: fixed;
   right: 24px;
@@ -830,6 +884,30 @@ img {
 .btn-top:focus-visible {
   box-shadow: var(--shadow-float);
   border-color: var(--card-border-hover);
+}
+
+.section.flash::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: calc(var(--radius-lg) + 8px);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent),
+    0 0 32px color-mix(in srgb, var(--accent) 25%, transparent);
+  opacity: 0;
+  animation: section-flash 1s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes section-flash {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
