@@ -4,13 +4,47 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#fbf7f1" />
+  <meta name="description" content="Николай Панин помогает бизнесу стать выбором клиента в Яндекс Картах: упаковка карточки, отзывы, контент и контроль репутации." />
   <title>Николай Панин — Яндекс Карты</title>
+  <link rel="canonical" href="https://np-maps.ru/" />
+  <meta property="og:title" content="Николай Панин — Яндекс Карты" />
+  <meta property="og:description" content="Поднимем доверие к вашей карточке в Яндекс Картах: упаковка, отзывы, контент и контроль." />
+  <meta property="og:image" content="https://np-maps.ru/og-image.svg" />
+  <meta property="og:url" content="https://np-maps.ru/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Николай Панин — Яндекс Карты" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Николай Панин — Яндекс Карты" />
+  <meta name="twitter:description" content="Поднимем доверие к вашей карточке в Яндекс Картах: упаковка, отзывы, контент и контроль." />
+  <meta name="twitter:image" content="https://np-maps.ru/og-image.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="sitemap" type="application/xml" href="sitemap.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Николай Панин",
+      "url": "https://np-maps.ru/",
+      "sameAs": [
+        "https://t.me/np_maps"
+      ],
+      "jobTitle": "Специалист по Яндекс Картам"
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Николай Панин — Яндекс Карты",
+      "url": "https://np-maps.ru/"
+    }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Пропустить к контенту</a>
   <div class="scroll-progress" aria-hidden="true">
     <span class="scroll-progress__bar"></span>
   </div>
@@ -39,14 +73,14 @@
         </button>
         <a class="btn btn-primary" href="#cta">Хочу так же</a>
         <div class="contacts">
-          <a href="tel:+79633181816">+7 963 318 1816</a>
-          <a href="https://t.me/np_maps" target="_blank" rel="noreferrer">Telegram</a>
+          <a href="tel:+79633181816" data-copy="+7 963 318 1816">+7 963 318 1816</a>
+          <a href="https://t.me/np_maps" data-copy="https://t.me/np_maps" target="_blank" rel="noreferrer">Telegram</a>
         </div>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="section intro" id="intro">
       <div class="container">
         <h2>Яндекс Карты — это место, где вас выбирают. Или вылетают к конкурентам.</h2>
@@ -461,8 +495,8 @@
       <div class="container cta-inner">
         <div>
           <h2>Хотите, чтобы вас выбирали на Картах чаще? Давайте сделаем нормально.</h2>
-          <p>Telegram: <a href="https://t.me/np_maps" target="_blank" rel="noreferrer">@np_maps</a></p>
-          <p>Телефон: <a href="tel:+79633181816">+7 963 318 1816</a></p>
+          <p>Telegram: <a href="https://t.me/np_maps" data-copy="https://t.me/np_maps" target="_blank" rel="noreferrer">@np_maps</a></p>
+          <p>Телефон: <a href="tel:+79633181816" data-copy="+7 963 318 1816">+7 963 318 1816</a></p>
           <p>Канал с кейсами: <a href="https://t.me/np_serm" target="_blank" rel="noreferrer">https://t.me/np_serm</a></p>
         </div>
         <a class="btn btn-primary" href="#cta">Хочу так же</a>
@@ -480,6 +514,10 @@
     ↑
   </button>
 
+  <div class="toast" role="status" aria-live="polite" aria-atomic="true" id="toast">
+    <span class="toast__message">Скопировано</span>
+  </div>
+
   <script>
     (function () {
       const root = document.documentElement;
@@ -488,6 +526,7 @@
       const progressBar = document.querySelector(".scroll-progress__bar");
       const backToTop = document.getElementById("backToTop");
       const header = document.querySelector(".site-header");
+      const toast = document.getElementById("toast");
       const storageKey = "theme"; // "light" | "dark"
 
       function getSystemTheme() {
@@ -546,6 +585,29 @@
         mq.addEventListener("change", () => {
           if (!root.hasAttribute("data-theme")) setTheme(null, { save: false });
         });
+      }
+
+      window.addEventListener("storage", (event) => {
+        if (event.key !== storageKey) return;
+        const nextTheme = event.newValue;
+        if (nextTheme === "light" || nextTheme === "dark") {
+          setTheme(nextTheme, { save: false });
+        } else {
+          setTheme(null, { save: false });
+        }
+      });
+
+      let toastTimeout;
+
+      function showToast(message) {
+        if (!toast) return;
+        const label = toast.querySelector(".toast__message");
+        if (label) label.textContent = message;
+        toast.dataset.visible = "true";
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.dataset.visible = "false";
+        }, 1200);
       }
 
       function updateProgress() {
@@ -848,6 +910,20 @@
 
       window.addEventListener("hashchange", handleHashChange);
       window.addEventListener("load", handleHashChange);
+
+      const copyTargets = Array.from(document.querySelectorAll("[data-copy]"));
+      if (copyTargets.length && navigator.clipboard) {
+        copyTargets.forEach((target) => {
+          target.addEventListener("click", () => {
+            const value = target.getAttribute("data-copy");
+            if (!value) return;
+            navigator.clipboard.writeText(value).then(
+              () => showToast("Скопировано"),
+              () => showToast("Не удалось скопировать")
+            );
+          });
+        });
+      }
     })();
   </script>
 </body>
