@@ -42,6 +42,7 @@
   --space-1: 12px;
   --space-2: 20px;
   --space-3: 32px;
+  --space-4: 48px;
   --cta-bg: linear-gradient(135deg, rgba(42, 91, 255, 0.9), rgba(201, 139, 43, 0.9));
   --cta-glow: radial-gradient(circle at 20% 20%, rgba(201, 139, 43, 0.65), rgba(0, 0, 0, 0) 60%),
     radial-gradient(circle at 80% 10%, rgba(42, 91, 255, 0.4), rgba(0, 0, 0, 0) 55%);
@@ -183,7 +184,9 @@ a {
 }
 
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+[role="button"]:focus-visible,
+[role="link"]:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px var(--focus-ring), 0 0 0 8px var(--focus-ring-outer);
   border-radius: 8px;
@@ -200,8 +203,12 @@ img {
 }
 
 .section {
-  padding: calc(var(--space-3) * 2.75) 0;
+  padding: calc(var(--space-4) * 1.5) 0;
   position: relative;
+  scroll-margin-top: calc(var(--header-height) + 18px);
+}
+
+section[id] {
   scroll-margin-top: calc(var(--header-height) + 18px);
 }
 
@@ -431,7 +438,7 @@ img {
 }
 
 .hero {
-  padding-top: 110px;
+  padding-top: calc(var(--space-4) * 2);
   position: relative;
   overflow: hidden;
 }
@@ -800,10 +807,52 @@ img {
 }
 
 .site-footer {
-  padding: 32px 0 48px;
+  padding: var(--space-3) 0 var(--space-4);
   color: var(--muted);
   text-align: center;
   font-size: 14px;
+}
+
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  padding: 10px 16px;
+  background: var(--surface);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  color: var(--text-strong);
+  transform: translateY(-140%);
+  transition: transform var(--transition);
+  z-index: 30;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+.toast {
+  position: fixed;
+  right: var(--space-3);
+  bottom: var(--space-3);
+  padding: 10px 16px;
+  background: var(--surface);
+  color: var(--text-strong);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-float);
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity var(--transition), transform var(--transition);
+  z-index: 30;
+}
+
+.toast[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .scroll-progress {
@@ -952,11 +1001,11 @@ img {
 
 @media (max-width: 768px) {
   .section {
-    padding: calc(var(--space-3) * 2) 0;
+    padding: calc(var(--space-4) * 1.2) 0;
   }
 
   .hero {
-    padding-top: 88px;
+    padding-top: calc(var(--space-4) * 1.6);
   }
 
   .hero-head {
@@ -975,7 +1024,7 @@ img {
 
 @media (max-width: 480px) {
   .section {
-    padding: calc(var(--space-3) * 1.7) 0;
+    padding: calc(var(--space-4) * 1.1) 0;
   }
 
   .hero-head p {
