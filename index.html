@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f6f8" />
   <title>Николай Панин — Яндекс Карты</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +24,9 @@
         <a href="#faq">FAQ</a>
       </nav>
       <div class="header-actions">
+        <button class="btn btn-theme" type="button" id="themeToggle" aria-label="Переключить тему" aria-pressed="false">
+          <span class="theme-ico" aria-hidden="true">🌙</span>
+        </button>
         <button class="btn btn-primary">Хочу так же</button>
         <div class="contacts">
           <a href="tel:+79633181816">+7 963 318 1816</a>
@@ -461,5 +465,65 @@
       <p>© 2024 Николай Панин. Яндекс Карты — система выбора клиента.</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById("themeToggle");
+      const storageKey = "theme"; // "light" | "dark"
+
+      function getSystemTheme() {
+        return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+
+      function getSavedTheme() {
+        try { return localStorage.getItem(storageKey); } catch { return null; }
+      }
+
+      function setTheme(theme, { save = true } = {}) {
+        if (theme) root.setAttribute("data-theme", theme);
+        else root.removeAttribute("data-theme"); // вернуть “как в системе”
+
+        const active = theme || getSystemTheme();
+        if (btn) {
+          btn.setAttribute("aria-pressed", active === "dark" ? "true" : "false");
+          btn.querySelector(".theme-ico").textContent = active === "dark" ? "☀️" : "🌙";
+        }
+
+        if (save) {
+          try {
+            if (theme) localStorage.setItem(storageKey, theme);
+            else localStorage.removeItem(storageKey);
+          } catch {}
+        }
+
+        // (необязательно) цвет адресной строки на мобилках
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", active === "dark" ? "#0b1220" : "#f5f6f8");
+      }
+
+      // 1) Старт: если есть сохранённая — применяем. Иначе система.
+      const saved = getSavedTheme();
+      if (saved === "light" || saved === "dark") setTheme(saved, { save: false });
+      else setTheme(null, { save: false });
+
+      // 2) Клик по кнопке: переключаем относительно текущего
+      if (btn) {
+        btn.addEventListener("click", () => {
+          const current = root.getAttribute("data-theme") || getSystemTheme();
+          const next = current === "dark" ? "light" : "dark";
+          setTheme(next);
+        });
+      }
+
+      // 3) Если пользователь не выбирал тему, а системная изменилась — обновляем UI-иконку/состояние
+      const mq = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+      if (mq) {
+        mq.addEventListener("change", () => {
+          if (!root.hasAttribute("data-theme")) setTheme(null, { save: false });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

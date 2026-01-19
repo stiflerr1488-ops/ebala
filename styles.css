@@ -1,5 +1,5 @@
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
   --bg: #f5f6f8;
   --surface: #ffffff;
   --surface-alt: #f0f2f5;
@@ -17,6 +17,59 @@
   --radius-pill: 999px;
   --transition: 0.2s ease;
   --header-height: 86px;
+  --bg-grad-1: #ffffff;
+  --bg-grad-2: var(--bg);
+  --bg-grad-3: var(--surface-alt);
+  --header-bg: rgba(255, 255, 255, 0.92);
+  --link-hover: #111827;
+}
+
+/* 1) Явно выбранная пользователем тема (перебивает систему) */
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --surface: #0f172a;
+  --surface-alt: #111c36;
+  --text: #e7eaf2;
+  --muted: #a7afc2;
+  --border: rgba(231, 234, 242, 0.12);
+  /* акценты оставляем узнаваемыми, чуть “неоновее” на тёмном */
+  --primary: #6ea2ff;
+  --accent: #ffca72;
+  /* тени на тёмном должны быть мягче и темнее */
+  --shadow-sm: 0 10px 22px rgba(0, 0, 0, 0.35);
+  --shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+  --bg-grad-1: rgba(30, 58, 138, 0.18);
+  --bg-grad-2: var(--bg);
+  --bg-grad-3: #070c16;
+  --header-bg: rgba(15, 23, 42, 0.78);
+  --link-hover: #ffffff;
+}
+
+/* 2) Если пользователь НЕ выбирал тему — следуем системе */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #0b1220;
+    --surface: #0f172a;
+    --surface-alt: #111c36;
+    --text: #e7eaf2;
+    --muted: #a7afc2;
+    --border: rgba(231, 234, 242, 0.12);
+    --primary: #6ea2ff;
+    --accent: #ffca72;
+    --shadow-sm: 0 10px 22px rgba(0, 0, 0, 0.35);
+    --shadow: 0 22px 60px rgba(0, 0, 0, 0.45);
+    --bg-grad-1: rgba(30, 58, 138, 0.18);
+    --bg-grad-2: var(--bg);
+    --bg-grad-3: #070c16;
+    --header-bg: rgba(15, 23, 42, 0.78);
+    --link-hover: #ffffff;
+  }
 }
 
 * {
@@ -32,8 +85,8 @@ html {
 body {
   font-family: "Manrope", system-ui, -apple-system, sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at top, #ffffff 0%, #f6f7fb 35%, #eef1f6 100%);
-  line-height: 1.7;
+  background: radial-gradient(circle at top, var(--bg-grad-1) 0%, var(--bg-grad-2) 35%, var(--bg-grad-3) 100%);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -99,7 +152,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--header-bg);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
@@ -163,7 +216,7 @@ img {
 
 .nav a:hover,
 .nav a:focus-visible {
-  color: #111827;
+  color: var(--link-hover);
 }
 
 .nav a:hover::after,
@@ -193,7 +246,7 @@ img {
 
 .contacts a:hover,
 .contacts a:focus-visible {
-  color: #111827;
+  color: var(--link-hover);
 }
 
 .btn {
@@ -589,4 +642,25 @@ img {
   .header-actions .btn {
     width: auto;
   }
+}
+
+.btn-theme {
+  padding: 12px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  color: var(--text);
+  line-height: 1;
+}
+
+.btn-theme:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.theme-ico {
+  display: inline-block;
+  width: 1.2em;
+  text-align: center;
 }
