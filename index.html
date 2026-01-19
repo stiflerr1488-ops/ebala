@@ -28,9 +28,16 @@
       </nav>
       <div class="header-actions">
         <button class="btn btn-theme" type="button" id="themeToggle" aria-label="Переключить тему" aria-pressed="false">
-          <span class="theme-ico" aria-hidden="true">🌙</span>
+          <span class="theme-icon" aria-hidden="true">
+            <svg class="theme-icon--sun" viewBox="0 0 24 24" role="presentation" focusable="false" aria-hidden="true">
+              <path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6Zm0-5.2a1 1 0 0 1 1 1v2.1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 17a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1Zm9-7a1 1 0 0 1-1 1h-2.1a1 1 0 1 1 0-2H20a1 1 0 0 1 1 1Zm-17 0a1 1 0 0 1-1 1H1.9a1 1 0 0 1 0-2H3a1 1 0 0 1 1 1Zm13.66-6.66a1 1 0 0 1 0 1.42l-1.48 1.48a1 1 0 0 1-1.42-1.42l1.48-1.48a1 1 0 0 1 1.42 0Zm-9.9 9.9a1 1 0 0 1 0 1.42l-1.48 1.48a1 1 0 1 1-1.42-1.42l1.48-1.48a1 1 0 0 1 1.42 0Zm9.9 1.42a1 1 0 0 1-1.42 0l-1.48-1.48a1 1 0 0 1 1.42-1.42l1.48 1.48a1 1 0 0 1 0 1.42Zm-9.9-9.9a1 1 0 0 1-1.42 0L4.86 6.34a1 1 0 0 1 1.42-1.42l1.48 1.48a1 1 0 0 1 0 1.42Z" />
+            </svg>
+            <svg class="theme-icon--moon" viewBox="0 0 24 24" role="presentation" focusable="false" aria-hidden="true">
+              <path d="M20.6 15.3A8.6 8.6 0 0 1 8.7 3.4a1 1 0 0 0-1.2-1.2A10.6 10.6 0 1 0 21.8 16.5a1 1 0 0 0-1.2-1.2Z" />
+            </svg>
+          </span>
         </button>
-        <button class="btn btn-primary">Хочу так же</button>
+        <a class="btn btn-primary" href="#cta">Хочу так же</a>
         <div class="contacts">
           <a href="tel:+79633181816">+7 963 318 1816</a>
           <a href="https://t.me/np_maps" target="_blank" rel="noreferrer">Telegram</a>
@@ -75,7 +82,7 @@
         <div class="hero-head">
           <h1>Поднимем доверие к вашей карточке в Яндекс Картах — чтобы вас выбирали чаще.</h1>
           <p class="lead">Не «накрутим рейтинг». А построим систему: упаковка + отзывы + ответы + контент + контроль.</p>
-          <button class="btn btn-primary">Хочу так же</button>
+          <a class="btn btn-primary" href="#cta">Хочу так же</a>
         </div>
         <div class="hero-grid">
           <article class="card">
@@ -458,7 +465,7 @@
           <p>Телефон: <a href="tel:+79633181816">+7 963 318 1816</a></p>
           <p>Канал с кейсами: <a href="https://t.me/np_serm" target="_blank" rel="noreferrer">https://t.me/np_serm</a></p>
         </div>
-        <button class="btn btn-primary">Хочу так же</button>
+        <a class="btn btn-primary" href="#cta">Хочу так же</a>
       </div>
     </section>
   </main>
@@ -504,8 +511,6 @@
         const active = theme || getSystemTheme();
         if (btn) {
           btn.setAttribute("aria-pressed", active === "dark" ? "true" : "false");
-          const icon = btn.querySelector(".theme-ico");
-          if (icon) icon.textContent = active === "dark" ? "☀️" : "🌙";
         }
 
         if (save) {
@@ -570,6 +575,37 @@
       window.addEventListener("scroll", onScroll, { passive: true });
       window.addEventListener("load", onScroll);
       window.addEventListener("resize", updateProgress);
+
+      const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
+      const spySections = ["cases", "pricing", "process", "faq"]
+        .map((id) => document.getElementById(id))
+        .filter(Boolean);
+
+      function setActiveSection(id) {
+        navLinks.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${id}`;
+          if (isActive) link.setAttribute("aria-current", "page");
+          else link.removeAttribute("aria-current");
+        });
+      }
+
+      if (spySections.length) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (visible) setActiveSection(visible.target.id);
+          },
+          {
+            rootMargin: "-35% 0px -55% 0px",
+            threshold: [0.2, 0.4, 0.6],
+          }
+        );
+
+        spySections.forEach((section) => observer.observe(section));
+        setActiveSection(spySections[0].id);
+      }
     })();
   </script>
 </body>
