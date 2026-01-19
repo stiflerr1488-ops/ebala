@@ -484,19 +484,31 @@ img {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card), inset 0 1px 0 var(--inner-highlight);
   border: 1px solid var(--hairline);
-  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  opacity: 0;
+  --lift: 0px;
+  --tx: 0px;
+  --ty: 0px;
+  --reveal-y: 10px;
+  transform: translate3d(var(--tx, 0px), calc(var(--lift, 0px) + var(--ty, 0px) + var(--reveal-y, 0px)), 0);
+  transition: opacity 400ms ease, transform 500ms ease, box-shadow var(--transition), border-color var(--transition);
   position: relative;
   overflow: hidden;
   isolation: isolate;
 }
 
+.card.is-revealed {
+  opacity: 1;
+  --reveal-y: 0px;
+}
+
 .card:hover {
-  transform: translateY(-2px);
+  --lift: -2px;
   box-shadow: var(--shadow-card-hover), 0 0 0 1px var(--card-glow), inset 0 1px 0 var(--inner-highlight);
   border-color: var(--card-border-hover);
 }
 
 .card:focus-within {
+  --lift: -2px;
   border-color: var(--card-border-hover);
   box-shadow: var(--shadow-card-hover), 0 0 0 1px var(--card-glow), inset 0 1px 0 var(--inner-highlight);
 }
@@ -833,6 +845,11 @@ img {
   .card::after {
     opacity: 0 !important;
     background: none !important;
+  }
+
+  .card {
+    opacity: 1;
+    --reveal-y: 0px;
   }
 }
 

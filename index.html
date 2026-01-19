@@ -614,6 +614,8 @@
       const reduceMotionQuery = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
       const cards = Array.from(document.querySelectorAll(".card"));
       const spotlightFrames = new WeakMap();
+      const magneticFrames = new WeakMap();
+      const MAX_MAGNETIC_SHIFT = 3;
 
       function updateCardSpotlight(card, clientX, clientY) {
         const rect = card.getBoundingClientRect();
@@ -641,6 +643,38 @@
         card.style.removeProperty("--my");
       }
 
+      function clamp(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+      }
+
+      function updateMagnetic(card, clientX, clientY) {
+        const rect = card.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const dx = clamp((clientX - centerX) / rect.width, -1, 1);
+        const dy = clamp((clientY - centerY) / rect.height, -1, 1);
+        card.style.setProperty("--tx", `${(dx * MAX_MAGNETIC_SHIFT).toFixed(2)}px`);
+        card.style.setProperty("--ty", `${(dy * MAX_MAGNETIC_SHIFT).toFixed(2)}px`);
+      }
+
+      function onMagneticMove(event) {
+        const card = event.currentTarget;
+        if (magneticFrames.has(card)) return;
+        const { clientX, clientY } = event;
+        const frame = window.requestAnimationFrame(() => {
+          updateMagnetic(card, clientX, clientY);
+          magneticFrames.delete(card);
+        });
+        magneticFrames.set(card, frame);
+      }
+
+      function resetMagnetic(event) {
+        const card = event.currentTarget;
+        card.style.setProperty("--tx", "0px");
+        card.style.setProperty("--ty", "0px");
+      }
+
       function setupSpotlight() {
         const shouldEnable = spotlightQuery && spotlightQuery.matches && !(reduceMotionQuery && reduceMotionQuery.matches);
         cards.forEach((card) => {
@@ -657,8 +691,50 @@
 
       setupSpotlight();
 
+      function setupMagnetic() {
+        const shouldEnable = spotlightQuery && spotlightQuery.matches && !(reduceMotionQuery && reduceMotionQuery.matches);
+        cards.forEach((card) => {
+          if (!shouldEnable) {
+            resetMagnetic({ currentTarget: card });
+            return;
+          }
+          if (card.dataset.magneticBound === "true") return;
+          card.dataset.magneticBound = "true";
+          card.addEventListener("pointermove", onMagneticMove, { passive: true });
+          card.addEventListener("pointerleave", resetMagnetic, { passive: true });
+        });
+      }
+
+      setupMagnetic();
+
       if (spotlightQuery) spotlightQuery.addEventListener("change", setupSpotlight);
       if (reduceMotionQuery) reduceMotionQuery.addEventListener("change", setupSpotlight);
+      if (spotlightQuery) spotlightQuery.addEventListener("change", setupMagnetic);
+      if (reduceMotionQuery) reduceMotionQuery.addEventListener("change", setupMagnetic);
+
+      function revealCards() {
+        if (reduceMotionQuery && reduceMotionQuery.matches) {
+          cards.forEach((card) => card.classList.add("is-revealed"));
+          return;
+        }
+        if (!("IntersectionObserver" in window)) {
+          cards.forEach((card) => card.classList.add("is-revealed"));
+          return;
+        }
+        const observer = new IntersectionObserver(
+          (entries, obs) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-revealed");
+              obs.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.18 }
+        );
+        cards.forEach((card) => observer.observe(card));
+      }
+
+      revealCards();
     })();
   </script>
 </body>
