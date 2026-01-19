@@ -609,6 +609,56 @@
         spySections.forEach((section) => observer.observe(section));
         setActiveSection(spySections[0].id);
       }
+
+      const spotlightQuery = window.matchMedia ? window.matchMedia("(hover: hover) and (pointer: fine)") : null;
+      const reduceMotionQuery = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+      const cards = Array.from(document.querySelectorAll(".card"));
+      const spotlightFrames = new WeakMap();
+
+      function updateCardSpotlight(card, clientX, clientY) {
+        const rect = card.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        const mx = ((clientX - rect.left) / rect.width) * 100;
+        const my = ((clientY - rect.top) / rect.height) * 100;
+        card.style.setProperty("--mx", `${mx}%`);
+        card.style.setProperty("--my", `${my}%`);
+      }
+
+      function onSpotlightMove(event) {
+        const card = event.currentTarget;
+        if (spotlightFrames.has(card)) return;
+        const { clientX, clientY } = event;
+        const frame = window.requestAnimationFrame(() => {
+          updateCardSpotlight(card, clientX, clientY);
+          spotlightFrames.delete(card);
+        });
+        spotlightFrames.set(card, frame);
+      }
+
+      function resetSpotlight(event) {
+        const card = event.currentTarget;
+        card.style.removeProperty("--mx");
+        card.style.removeProperty("--my");
+      }
+
+      function setupSpotlight() {
+        const shouldEnable = spotlightQuery && spotlightQuery.matches && !(reduceMotionQuery && reduceMotionQuery.matches);
+        cards.forEach((card) => {
+          if (!shouldEnable) {
+            resetSpotlight({ currentTarget: card });
+            return;
+          }
+          if (card.dataset.spotlightBound === "true") return;
+          card.dataset.spotlightBound = "true";
+          card.addEventListener("pointermove", onSpotlightMove, { passive: true });
+          card.addEventListener("pointerleave", resetSpotlight, { passive: true });
+        });
+      }
+
+      setupSpotlight();
+
+      if (spotlightQuery) spotlightQuery.addEventListener("change", setupSpotlight);
+      if (reduceMotionQuery) reduceMotionQuery.addEventListener("change", setupSpotlight);
     })();
   </script>
 </body>

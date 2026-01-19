@@ -15,6 +15,7 @@
   --border: rgba(31, 36, 48, 0.1);
   --border-strong: rgba(42, 91, 255, 0.18);
   --shadow-card: 0 10px 24px rgba(20, 24, 33, 0.08), 0 2px 8px rgba(20, 24, 33, 0.06);
+  --shadow-card-hover: 0 18px 38px rgba(20, 24, 33, 0.12), 0 8px 18px rgba(20, 24, 33, 0.08);
   --shadow-float: 0 24px 56px rgba(20, 24, 33, 0.14), 0 10px 20px rgba(20, 24, 33, 0.1);
   --bg-grad-1: rgba(201, 139, 43, 0.18);
   --bg-grad-2: rgba(42, 91, 255, 0.1);
@@ -33,6 +34,8 @@
   --card-highlight: rgba(255, 255, 255, 0.75);
   --card-glow: rgba(201, 139, 43, 0.24);
   --card-border-hover: rgba(201, 139, 43, 0.35);
+  --card-spotlight: rgba(255, 245, 230, 0.6);
+  --card-spotlight-blend: soft-light;
   --btn-glow: rgba(201, 139, 43, 0.45);
   --btn-glow-strong: rgba(201, 139, 43, 0.6);
   --space-1: 12px;
@@ -66,6 +69,7 @@ body[data-theme="dark"] {
   --border: rgba(236, 231, 223, 0.1);
   --border-strong: rgba(109, 139, 255, 0.22);
   --shadow-card: 0 14px 32px rgba(0, 0, 0, 0.5), 0 6px 16px rgba(0, 0, 0, 0.35);
+  --shadow-card-hover: 0 20px 46px rgba(0, 0, 0, 0.6), 0 10px 22px rgba(0, 0, 0, 0.45);
   --shadow-float: 0 28px 70px rgba(0, 0, 0, 0.6), 0 12px 30px rgba(0, 0, 0, 0.45);
   --bg-grad-1: rgba(224, 168, 74, 0.14);
   --bg-grad-2: rgba(109, 139, 255, 0.14);
@@ -79,6 +83,8 @@ body[data-theme="dark"] {
   --card-highlight: rgba(255, 255, 255, 0.04);
   --card-glow: rgba(224, 168, 74, 0.18);
   --card-border-hover: rgba(224, 168, 74, 0.28);
+  --card-spotlight: rgba(255, 196, 120, 0.35);
+  --card-spotlight-blend: screen;
   --btn-glow: rgba(224, 168, 74, 0.2);
   --btn-glow-strong: rgba(224, 168, 74, 0.3);
   --cta-bg: linear-gradient(135deg, rgba(28, 20, 16, 0.96), rgba(54, 34, 22, 0.98));
@@ -104,6 +110,7 @@ body[data-theme="dark"] {
     --border: rgba(236, 231, 223, 0.1);
     --border-strong: rgba(109, 139, 255, 0.22);
     --shadow-card: 0 14px 32px rgba(0, 0, 0, 0.5), 0 6px 16px rgba(0, 0, 0, 0.35);
+    --shadow-card-hover: 0 20px 46px rgba(0, 0, 0, 0.6), 0 10px 22px rgba(0, 0, 0, 0.45);
     --shadow-float: 0 28px 70px rgba(0, 0, 0, 0.6), 0 12px 30px rgba(0, 0, 0, 0.45);
     --bg-grad-1: rgba(224, 168, 74, 0.14);
     --bg-grad-2: rgba(109, 139, 255, 0.14);
@@ -117,6 +124,8 @@ body[data-theme="dark"] {
     --card-highlight: rgba(255, 255, 255, 0.04);
     --card-glow: rgba(224, 168, 74, 0.18);
     --card-border-hover: rgba(224, 168, 74, 0.28);
+    --card-spotlight: rgba(255, 196, 120, 0.35);
+    --card-spotlight-blend: screen;
     --btn-glow: rgba(224, 168, 74, 0.2);
     --btn-glow-strong: rgba(224, 168, 74, 0.3);
     --cta-bg: linear-gradient(135deg, rgba(28, 20, 16, 0.96), rgba(54, 34, 22, 0.98));
@@ -477,17 +486,47 @@ img {
   border: 1px solid var(--hairline);
   transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-float), 0 0 0 1px var(--card-glow), inset 0 1px 0 var(--inner-highlight);
+  box-shadow: var(--shadow-card-hover), 0 0 0 1px var(--card-glow), inset 0 1px 0 var(--inner-highlight);
   border-color: var(--card-border-hover);
 }
 
 .card:focus-within {
   border-color: var(--card-border-hover);
-  box-shadow: var(--shadow-float), 0 0 0 1px var(--card-glow), inset 0 1px 0 var(--inner-highlight);
+  box-shadow: var(--shadow-card-hover), 0 0 0 1px var(--card-glow), inset 0 1px 0 var(--inner-highlight);
+}
+
+.card:hover,
+.card:focus-within {
+  will-change: transform;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), var(--card-spotlight) 0%, rgba(0, 0, 0, 0) 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  mix-blend-mode: var(--card-spotlight-blend);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover::after {
+    opacity: 1;
+  }
 }
 
 .card h3 {
@@ -789,6 +828,11 @@ img {
   * {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+  }
+
+  .card::after {
+    opacity: 0 !important;
+    background: none !important;
   }
 }
 
