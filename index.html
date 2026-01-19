@@ -476,6 +476,7 @@
   <script>
     (function () {
       const root = document.documentElement;
+      const body = document.body;
       const btn = document.getElementById("themeToggle");
       const progressBar = document.querySelector(".scroll-progress__bar");
       const backToTop = document.getElementById("backToTop");
@@ -489,14 +490,22 @@
         try { return localStorage.getItem(storageKey); } catch { return null; }
       }
 
+      function applyThemeAttribute(theme) {
+        [root, body].forEach((node) => {
+          if (!node) return;
+          if (theme) node.setAttribute("data-theme", theme);
+          else node.removeAttribute("data-theme");
+        });
+      }
+
       function setTheme(theme, { save = true } = {}) {
-        if (theme) root.setAttribute("data-theme", theme);
-        else root.removeAttribute("data-theme"); // вернуть “как в системе”
+        applyThemeAttribute(theme); // вернуть “как в системе”
 
         const active = theme || getSystemTheme();
         if (btn) {
           btn.setAttribute("aria-pressed", active === "dark" ? "true" : "false");
-          btn.querySelector(".theme-ico").textContent = active === "dark" ? "☀️" : "🌙";
+          const icon = btn.querySelector(".theme-ico");
+          if (icon) icon.textContent = active === "dark" ? "☀️" : "🌙";
         }
 
         if (save) {
