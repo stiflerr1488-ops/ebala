@@ -566,9 +566,12 @@
         updateBackToTop();
       }
 
+      const prefersReducedMotion = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+
       if (backToTop) {
         backToTop.addEventListener("click", () => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          const behavior = prefersReducedMotion && prefersReducedMotion.matches ? "auto" : "smooth";
+          window.scrollTo({ top: 0, behavior });
         });
       }
 
