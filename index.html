@@ -487,6 +487,7 @@
       const btn = document.getElementById("themeToggle");
       const progressBar = document.querySelector(".scroll-progress__bar");
       const backToTop = document.getElementById("backToTop");
+      const header = document.querySelector(".site-header");
       const storageKey = "theme"; // "light" | "dark"
 
       function getSystemTheme() {
@@ -561,9 +562,16 @@
         backToTop.dataset.visible = show ? "true" : "false";
       }
 
+      function updateHeaderState() {
+        if (!header) return;
+        const shouldBeScrolled = window.scrollY > 60;
+        header.classList.toggle("is-scrolled", shouldBeScrolled);
+      }
+
       function onScroll() {
         updateProgress();
         updateBackToTop();
+        updateHeaderState();
       }
 
       const prefersReducedMotion = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
@@ -575,7 +583,18 @@
         });
       }
 
-      window.addEventListener("scroll", onScroll, { passive: true });
+      let scrollTicking = false;
+
+      function onScrollRaf() {
+        if (scrollTicking) return;
+        scrollTicking = true;
+        window.requestAnimationFrame(() => {
+          onScroll();
+          scrollTicking = false;
+        });
+      }
+
+      window.addEventListener("scroll", onScrollRaf, { passive: true });
       window.addEventListener("load", onScroll);
       window.addEventListener("resize", updateProgress);
 
@@ -712,6 +731,30 @@
       if (spotlightQuery) spotlightQuery.addEventListener("change", setupMagnetic);
       if (reduceMotionQuery) reduceMotionQuery.addEventListener("change", setupMagnetic);
 
+      const rippleReduceMotion = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+      const rippleElements = Array.from(document.querySelectorAll(".btn, .card"));
+
+      function createRipple(event) {
+        if (rippleReduceMotion && rippleReduceMotion.matches) return;
+        const target = event.currentTarget;
+        const rect = target.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height) * 1.35;
+        const ripple = document.createElement("span");
+        ripple.className = "ripple";
+        ripple.style.setProperty("--ripple-size", `${size}px`);
+        ripple.style.setProperty("--ripple-x", `${event.clientX - rect.left}px`);
+        ripple.style.setProperty("--ripple-y", `${event.clientY - rect.top}px`);
+        target.appendChild(ripple);
+
+        const remove = () => ripple.remove();
+        ripple.addEventListener("animationend", remove, { once: true });
+        setTimeout(remove, 500);
+      }
+
+      rippleElements.forEach((element) => {
+        element.addEventListener("pointerdown", createRipple);
+      });
+
       function revealCards() {
         if (reduceMotionQuery && reduceMotionQuery.matches) {
           cards.forEach((card) => card.classList.add("is-revealed"));
@@ -735,6 +778,76 @@
       }
 
       revealCards();
+
+      const tiltQuery = window.matchMedia ? window.matchMedia("(hover: hover) and (pointer: fine)") : null;
+      const tiltTimeouts = new WeakMap();
+
+      function clearCardTilt(card) {
+        card.classList.remove("is-pressed");
+        card.style.setProperty("--press-translate-x", "0px");
+        card.style.setProperty("--press-translate-y", "0px");
+        card.style.setProperty("--press-rotate-x", "0deg");
+        card.style.setProperty("--press-rotate-y", "0deg");
+      }
+
+      function applyCardTilt(event) {
+        if (!(tiltQuery && tiltQuery.matches)) return;
+        const card = event.currentTarget;
+        const rect = card.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dx = Math.max(-1, Math.min(1, (event.clientX - cx) / rect.width));
+        const dy = Math.max(-1, Math.min(1, (event.clientY - cy) / rect.height));
+        const rotateX = (-dy * 2).toFixed(2);
+        const rotateY = (dx * 2).toFixed(2);
+        const translateX = (dx * 1.5).toFixed(2);
+        const translateY = (dy * 1.5).toFixed(2);
+        card.classList.add("is-pressed");
+        card.style.setProperty("--press-translate-x", `${translateX}px`);
+        card.style.setProperty("--press-translate-y", `${translateY}px`);
+        card.style.setProperty("--press-rotate-x", `${rotateX}deg`);
+        card.style.setProperty("--press-rotate-y", `${rotateY}deg`);
+        if (tiltTimeouts.has(card)) clearTimeout(tiltTimeouts.get(card));
+        const timeout = setTimeout(() => {
+          clearCardTilt(card);
+          tiltTimeouts.delete(card);
+        }, 160);
+        tiltTimeouts.set(card, timeout);
+      }
+
+      cards.forEach((card) => {
+        card.addEventListener("pointerdown", applyCardTilt);
+        card.addEventListener("pointerleave", () => clearCardTilt(card));
+        card.addEventListener("pointerup", () => clearCardTilt(card));
+      });
+
+      function flashSection(section) {
+        if (!section) return;
+        section.classList.remove("flash");
+        void section.offsetWidth;
+        section.classList.add("flash");
+        setTimeout(() => section.classList.remove("flash"), 1100);
+      }
+
+      function handleHashChange() {
+        const id = window.location.hash.replace("#", "");
+        if (!id) return;
+        flashSection(document.getElementById(id));
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const href = event.currentTarget.getAttribute("href");
+          if (!href || !href.startsWith("#")) return;
+          const target = document.querySelector(href);
+          if (target) {
+            window.requestAnimationFrame(() => flashSection(target));
+          }
+        });
+      });
+
+      window.addEventListener("hashchange", handleHashChange);
+      window.addEventListener("load", handleHashChange);
     })();
   </script>
 </body>
