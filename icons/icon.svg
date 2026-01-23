@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="NP">
+  <circle cx="50" cy="50" r="45" fill="#ffffff" stroke="#dc0000" stroke-width="10"/>
+  <!-- Center text using dominant-baseline; y=50 is true center of the viewBox -->
+  <text x="50" y="50" text-anchor="middle" dominant-baseline="middle"
+        font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" fill="#000000">NP</text>
+</svg>

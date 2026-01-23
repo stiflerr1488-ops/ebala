@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<!-- BUILD: 20260121-5 -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#0c0f16" name="theme-color"/>
+<script id="themeInit">(function(){try{var k='theme';var t=localStorage.getItem(k);if(t!=='light'&&t!=='dark'){t='dark';try{localStorage.setItem(k,t);}catch(e){}}document.documentElement.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]');if(m){m.setAttribute('content',t==='dark'?'#0c0f16':'#fbf7f1');}}catch(e){document.documentElement.setAttribute('data-theme','dark');var m2=document.querySelector('meta[name="theme-color"]');if(m2){m2.setAttribute('content','#0c0f16');}}})();</script><link href="icons/favicon.ico" rel="icon" sizes="any"/>
+<link href="icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="icons/icon.svg" rel="icon" type="image/svg+xml"/>
+<link href="icons/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="manifest.webmanifest?v=20260121-5" rel="manifest"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="NP.Maps" name="apple-mobile-web-app-title"/>
+<meta content="SERM на картах: Яндекс Бизнес, отзывы, ответы, контент и контроль. Делаем карточку понятной и «выборной» — без фейков и накрутки." name="description"/>
+<title>NP.Maps — SERM на Яндекс Картах и Яндекс Бизнес</title>
+<link href="https://np-maps.ru/" rel="canonical"/>
+<meta content="NP.Maps — SERM на Яндекс Картах и Яндекс Бизнес" property="og:title"/>
+<meta content="Упаковываем карточку, настраиваем работу с отзывами и контентом, держим репутацию под контролем. Без обещаний «5.0 за неделю»." property="og:description"/>
+<meta content="https://np-maps.ru/og-image.png" property="og:image"/>
+<meta content="NP.Maps — SERM на картах" property="og:image:alt"/>
+<meta content="https://np-maps.ru/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="NP.Maps" property="og:site_name"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="NP.Maps — SERM на Яндекс Картах и Яндекс Бизнес" name="twitter:title"/>
+<meta content="Упаковываем карточку, настраиваем работу с отзывами и контентом, держим репутацию под контролем. Без накрутки." name="twitter:description"/>
+<meta content="https://np-maps.ru/og-image.png" name="twitter:image"/>
+<!-- Cache-busting for static assets (change version in one place) -->
+<script>
+  // Update this value on deploy to force browsers to fetch fresh CSS/JS
+  window.__ASSET_V__ = '20260121-5';
+</script>
+<link href="styles.css?v=20260121-5" rel="stylesheet"/>
+<link href="sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Николай Панин",
+      "url": "https://np-maps.ru/",
+      "sameAs": ["https://t.me/np_maps", "https://t.me/np_serm"],
+      "jobTitle": "SERM на картах (Яндекс Бизнес)",
+      "knowsAbout": ["SERM", "Яндекс Бизнес", "репутация на картах", "локальный маркетинг", "работа с отзывами"]
+    }
+  </script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "NP.Maps — репутация на картах",
+      "url": "https://np-maps.ru/"
+    }
+  </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "NP.Maps",
+    "url": "https://np-maps.ru/",
+    "telephone": "+7 963 318 1816",
+    "areaServed": "RU",
+    "serviceType": ["SERM на картах", "Яндекс Бизнес", "Работа с отзывами", "Ответы на негатив", "Контент для карточки"],
+    "founder": {
+      "@type": "Person",
+      "name": "Николай Панин"
+    },
+    "sameAs": ["https://t.me/np_maps", "https://t.me/np_serm"]
+  }
+</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Что конкретно вы делаете в SERM, кроме «отзывов»?","acceptedAnswer":{"@type":"Answer","text":"Выстраиваю систему доверия на картах: упаковка карточки (услуги/категории/описание/контент) → стратегия отзывов → ответы на негатив → мониторинг → отчётность."}},{"@type":"Question","name":"С каких площадок начинаем и почему?","acceptedAnswer":{"@type":"Answer","text":"Начинаем там, где у вас больше трафика и денег (часто Яндекс). 2ГИС/Google подключаю параллельно, если там есть аудитория или задача."}},{"@type":"Question","name":"Вы можете гарантировать рост клиентов / заявок / продаж?","acceptedAnswer":{"@type":"Answer","text":"Продажи гарантировать нельзя — влияют цена, сезон, конкуренты и обработка обращений. Гарантирую процесс: план, регулярные действия, контроль метрик и прозрачные отчёты."}},{"@type":"Question","name":"Какие результаты считаем нормальными и как их измеряем?","acceptedAnswer":{"@type":"Answer","text":"Смотрим цифры: показы/просмотры, звонки/клики/переходы, конверсия «просмотр → действие», рейтинг и качество отзывов, доля негатива и скорость реакции. Фиксируем «до/после»."}},{"@type":"Question","name":"Сколько времени нужно, чтобы увидеть первые сдвиги?","acceptedAnswer":{"@type":"Answer","text":"Обычно: 7–14 дней — порядок в карточке и первые сдвиги по действиям; 30 дней — стабилизация; 60–90 дней — системный эффект (доверие + отзывы + конверсия)."}},{"@type":"Question","name":"Что важнее сначала: упаковка карточки или отзывы?","acceptedAnswer":{"@type":"Answer","text":"Если карточка «сырая», отзывы работают хуже. Почти всегда сначала фундамент (упаковка), потом — активная стратегия отзывов."}},{"@type":"Question","name":"Почему у нас хороший рейтинг, но звонков мало?","acceptedAnswer":{"@type":"Answer","text":"Часто причина в витрине: слабые фото, неясно «что вы делаете» за 5 секунд, услуги/категории не попадают в спрос, нет сильного УТП и понятного следующего шага."}},{"@type":"Question","name":"Что вы будете менять в карточке?","acceptedAnswer":{"@type":"Answer","text":"То, что влияет на выбор: услуги/категории (чтобы попадать в выдачу), описание/УТП, фото/видео и порядок контента, ответы на вопросы, оформление «под конверсию»."}},{"@type":"Question","name":"Какие материалы нужны от нас на старте?","acceptedAnswer":{"@type":"Answer","text":"Минимум: ссылка на карточку, список услуг + цены/диапазоны (как есть), 10–30 фото (любые), ваши сильные стороны (скорость/гарантии/особенности)."}},{"@type":"Question","name":"Кто отвечает на отзывы: вы или администратор?","acceptedAnswer":{"@type":"Answer","text":"Два варианта: веду ответы под ключ или даю регламент/шаблоны и контролирую качество, а публикует ваш администратор."}},{"@type":"Question","name":"Как вы работаете с негативом и как быстро реагируете?","acceptedAnswer":{"@type":"Answer","text":"Негатив не лежит «неделю»: обычно реагируем в течение 24 часов. В большинстве случаев — грамотный ответ + фиксация решения. Удаление — только если есть основания по правилам."}},{"@type":"Question","name":"Вы можете удалить «несправедливый» отзыв?","acceptedAnswer":{"@type":"Answer","text":"Могу подготовить и провести оспаривание, если есть реальные основания (фейк, мат, персональные данные и т.п.). «Просто не нравится» — не основание."}},{"@type":"Question","name":"Какие риски: фильтры, снятие отзывов, бан?","acceptedAnswer":{"@type":"Answer","text":"Риски появляются при «в лоб»: резкие всплески, одинаковые тексты, подозрительные аккаунты. Работаю аккуратно: ровный темп, разные сценарии, человеческая логика, без серых схем."}},{"@type":"Question","name":"Как собираете новые отзывы безопасно?","acceptedAnswer":{"@type":"Answer","text":"Через систему запросов после услуги/покупки: скрипты для персонала, QR/ссылки, правильные точки контакта. Заранее задаём темы отзывов (сервис/качество/сроки/гарантия), чтобы это работало на выбор."}},{"@type":"Question","name":"Как часто отчёты и что в них будет?","acceptedAnswer":{"@type":"Answer","text":"Обычно 1–4 раза в месяц (зависит от формата). В отчёте: что сделали → что изменилось в цифрах → выводы → план следующего периода. По инцидентам/негативу — сразу."}}]}</script>
+<meta content="ru_RU" property="og:locale"/><meta content="image/png" property="og:image:type"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/></head>
+<body>
+<a class="skip-link" href="#main-content">Пропустить к контенту</a>
+<div aria-hidden="true" class="scroll-progress">
+<span class="scroll-progress__bar"></span>
+</div>
+<header class="site-header">
+<div class="container header-inner">
+<div class="brand">
+<button aria-label="Сменить тему" class="btn btn-outline theme-toggle" id="themeToggle" title="Светлая/тёмная тема" type="button"><svg aria-hidden="true" class="icon-sun" viewbox="0 0 24 24"><circle cx="12" cy="12" fill="none" r="4" stroke="currentColor" stroke-width="2"></circle><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg><svg aria-hidden="true" class="icon-moon" viewbox="0 0 24 24"><path d="M21 13.2A7.5 7.5 0 1 1 10.8 3a6 6 0 0 0 10.2 10.2Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path></svg></button>
+<div class="logo">
+<span class="logo-title"><img alt="NP.Maps" aria-hidden="true" class="logo-mark" decoding="async" src="icons/icon.svg?v=20260120-11"/>NP.Maps</span>
+<span class="logo-subtitle">Репутация на картах: карточка, отзывы, ответы, контент, контроль. Без фейков.</span>
+</div>
+</div>
+<div class="header-actions">
+<a class="btn btn-outline header-cta header-cta--withicon" data-track="header_tg" href="https://t.me/np_serm" rel="noreferrer" target="_blank"><img alt="" class="cta-ico" decoding="async" loading="lazy" src="icons/np-avatar-64.png"/>Канал в Телеграме</a>
+<div class="contacts">
+<a class="contact-link" data-copy="+7 963 318 1816" data-track="phone_click" href="tel:+79633181816"><img alt="" class="contact-ico" decoding="async" loading="lazy" src="icons/phone.svg?v=20260120-11"/>+7 963 318 1816</a>
+<a class="contact-link" data-copy="https://t.me/np_maps" data-track="tg_click" href="https://t.me/np_maps" rel="noreferrer" target="_blank"><img alt="" class="contact-ico" decoding="async" loading="lazy" src="icons/telegram.svg?v=20260120-11"/>Telegram</a>
+</div>
+</div>
+</div>
+</header>
+<main id="main-content">
+<section class="section hero" id="hero">
+<div class="container">
+<div class="hero-top">
+<div class="hero-head">
+<h1>Репутация и доверие на Яндекс Картах</h1>
+<p class="hero-kicker">SERM на картах: отзывы, ответы, упаковка карточки</p>
+<p class="lead">Клиент уже выбирает из 3–5 вариантов в Картах и принимает решение за минуты. Важно выглядеть надёжно и дать понятный шаг: позвонить, доехать, записаться.</p>
+<p class="muted">Фокус — Яндекс: там чаще всего происходит выбор и сразу совершается действие. 2ГИС и Google держим как обязательный минимум, чтобы не проигрывать на сравнении.</p>
+<a class="btn btn-primary" data-track="hero_tg" href="https://t.me/np_maps" rel="noreferrer" target="_blank">Запросить разбор карточки</a>
+<p class="hero-format">Формат: под ключ или вместе с вашей командой — регламенты и контроль.</p>
+<p class="muted">Достаточно ссылки + город + ниша + какая задача — отвечу, с чего начать.</p>
+</div>
+<div aria-hidden="true" class="hero-visual">
+<img alt="" class="theme-art" data-src-dark="assets/illustrations/hero-visual-dark.svg" data-src-light="assets/illustrations/hero-visual-light.svg" decoding="async" fetchpriority="high" loading="eager" src="assets/illustrations/hero-visual-dark.svg"/>
+</div>
+</div>
+<div class="hero-grid">
+<article class="card">
+<h3>Типовые проблемы</h3>
+<ul>
+<li>отзывов мало — и они «не про страхи клиента»</li>
+<li>негатив висит без ответа</li>
+<li>фото слабые или случайные</li>
+<li>услуги/цены неясны — клиент не понимает «за что платить»</li>
+</ul>
+</article>
+<article class="card">
+<h3>Что вы получите</h3>
+<ul>
+<li>карточку, которую удобно сравнивать — и приятно выбирать</li>
+<li>процесс сбора отзывов (без накрутки)</li>
+<li>регламент ответов на отзывы и вопросы</li>
+<li>контент, который подтверждает качество</li>
+<li>если подключаем продвижение — геоперфоманс: районы/города, бюджет туда, где есть заявки</li>
+<li>отчётность по географии: где растут звонки/маршруты/переходы</li>
+</ul>
+</article>
+<article class="card">
+<h3>Как стартуем</h3>
+<ol>
+<li>15 минут: цели, города, конкуренты</li>
+<li>диагностика карточки и витрины</li>
+<li>план на 30 дней + стоимость</li>
+</ol>
+</article>
+</div>
+</div>
+</section>
+<section class="section intro" id="intro">
+<div class="container">
+<h2>Почему именно карты</h2>
+<div class="intro-grid">
+<div class="intro-text">
+<p><strong>Карты</strong> — это экран сравнения и действия в одном месте: рейтинг, отзывы, фото, цены и кнопки (звонок/маршрут/запись).</p>
+<p>Поэтому репутация на картах влияет на решение напрямую — ещё до того, как человек напишет или позвонит.</p>
+<p class="muted">Если подключаем рекламу — делаем это умно: <strong>геоперфоманс</strong> (районы/города), чтобы не платить за «не вашу» географию.</p>
+<p>Доверие формируют сигналы:</p>
+<ul>
+<li>фото и ощущение «настоящего» места/бренда</li>
+<li>понятные услуги и цены (что делаете и за что платят)</li>
+<li>как вы отвечаете на вопросы и негатив</li>
+<li>«живость» карточки: свежие отзывы, актуальный контент</li>
+<li>насколько легко сделать действие: позвонить, доехать, записаться</li>
+</ul>
+<div aria-label="Сигналы доверия" class="trust-badges">
+<span class="trust-badge"><span class="trust-badge__icon"><img alt="" aria-hidden="true" height="16" src="assets/ui-icons/camera.svg" width="16"/></span><span class="trust-badge__text">Фото</span></span>
+<span class="trust-badge"><span class="trust-badge__icon"><img alt="" aria-hidden="true" height="16" src="assets/ui-icons/list.svg" width="16"/></span><span class="trust-badge__text">Услуги</span></span>
+<span class="trust-badge"><span class="trust-badge__icon"><img alt="" aria-hidden="true" height="16" src="assets/ui-icons/price-tag.svg" width="16"/></span><span class="trust-badge__text">Цены</span></span>
+<span class="trust-badge"><span class="trust-badge__icon"><img alt="" aria-hidden="true" height="16" src="assets/ui-icons/message.svg" width="16"/></span><span class="trust-badge__text">Ответы</span></span>
+<span class="trust-badge"><span class="trust-badge__icon"><img alt="" aria-hidden="true" height="16" src="assets/ui-icons/clock.svg" width="16"/></span><span class="trust-badge__text">Свежесть</span></span>
+<span class="trust-badge"><span class="trust-badge__icon"><img alt="" aria-hidden="true" height="16" src="assets/ui-icons/star.svg" width="16"/></span><span class="trust-badge__text">Рейтинг</span></span>
+</div>
+</div>
+<div class="intro-highlight">
+<p><strong>Карты — это меньше шагов.</strong></p>
+<p>Человек сравнивает и действует в одном экране. Поэтому даже мелкие недоработки карточки напрямую режут конверсию в звонки и записи.</p>
+<div aria-hidden="true" class="intro-highlight__art">
+<img alt="" class="theme-art" data-src-dark="assets/illustrations/maps-steps-dark.svg" data-src-light="assets/illustrations/maps-steps-light.svg" decoding="async" loading="lazy" src="assets/illustrations/maps-steps-dark.svg"/>
+</div>
+</div>
+</div>
+<div class="platforms-grid">
+<article class="card">
+<h3>Почему фокус на Яндекс</h3>
+<ul><li><strong>Покупка здесь.</strong> 1–2 клика: звонок / маршрут / сообщение</li><li><strong>Колдунщик в выдаче.</strong> Карта и топ‑список компаний — первый экран выбора</li><li><strong>Предустановка и «белый список».</strong> Яндекс уже на телефоне клиента → не надо «установите приложение»</li><li><strong>Доминирование в локальном спросе.</strong> Основной поток в РФ проходит через Яндекс → упирается в карты</li><li><strong>Органический трафик.</strong> Выше позиции + лучше карточка → больше обращений без рекламы. Реклама — опционально, если нужно ускорить.</li><li><strong>Рост радиуса показа.</strong> Активности (клики/звонки/маршруты) расширяют видимость</li><li><strong>Управляемость.</strong> Яндекс Бизнес: кабинет, модерация, жалобы, правки</li></ul>
+</article>
+<article class="card">
+<h3>Почему не только Яндекс</h3>
+<p>Формула простая: <strong>Яндекс — приоритет</strong>, а 2ГИС и остальные площадки держим в порядке, чтобы не проигрывать на сравнении.</p>
+<ul>
+<li><strong>2ГИС</strong> — сильная привычка аудитории в ряде городов и ниш</li>
+<li><strong>Google</strong> — часть аудитории (туристы, привычки iOS/Android, отдельные города)</li>
+</ul>
+</article>
+<article class="card">
+<h3>Роль сайта и соцсетей</h3>
+<ul>
+<li><strong>Карты</strong> — момент выбора → здесь репутация конвертируется в обращения</li>
+<li><strong>Сайт</strong> — детали, доказательства, SEO и заявка</li>
+<li><strong>VK / Telegram</strong> — контент, прогрев и повторные касания</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section class="section loss" id="loss">
+<div class="container">
+<div class="section-head"><h2>Что теряет недоработанная карточка на картах</h2><div aria-hidden="true" class="section-illus-wrap"><img alt="" class="theme-art section-illus-img" data-src-dark="assets/illustrations/blocks/loss-dark.svg" data-src-light="assets/illustrations/blocks/loss-light.svg" decoding="async" loading="lazy" src="assets/illustrations/blocks/loss-dark.svg"/></div></div>
+<div class="loss-grid">
+<p>Потери происходят ещё до обращения — в момент сравнения карточек. Клиент не «разбирается» и не уточняет: он просто уходит к более понятному варианту.</p>
+<ul>
+<li>видит негатив без ответа и закрывает карточку</li>
+<li>не считывает ценность — сравнивает только по цене</li>
+<li>не находит подтверждений качества (фото, примеры, команда) — сомневается</li>
+<li>ошибки в услугах, категориях, графике, контактах снижают доверие</li>
+<li>нет ясного шага: как записаться/позвонить/доехать без лишних действий</li>
+</ul>
+<p class="accent">Чаще всего вы проигрываете не потому что хуже. А потому что в момент выбора выглядите менее надёжно и менее понятно.</p>
+</div>
+</div>
+</section>
+<section class="section solution" id="solution">
+<div class="container">
+<div class="section-head"><h2>Что делаем, чтобы карточка стала «выборной».</h2><div aria-hidden="true" class="section-illus-wrap"><img alt="" class="theme-art section-illus-img" data-src-dark="assets/illustrations/blocks/choice-dark.svg" data-src-light="assets/illustrations/blocks/choice-light.svg" decoding="async" loading="lazy" src="assets/illustrations/blocks/choice-dark.svg"/></div></div>
+<div class="solutions-grid">
+<article class="card">
+<h3>1) Фундамент и факты</h3>
+<p>Категории, атрибуты, услуги, расписание, контакты, ссылки, описание — без дыр и ошибок.</p>
+</article>
+<article class="card">
+<h3>2) Отзывы как процесс</h3>
+<p>Сценарии, тексты, тайминги, QR‑материалы и правила для персонала. <strong>Только реальные отзывы</strong>, без накрутки и без риска для модерации.</p>
+</article>
+<article class="card">
+<h3>3) Ответы, которые защищают</h3>
+<p>Ответы на позитив — <strong>персонально и по делу</strong> (и с ключами, но без спама). Негатив не заметаем: уточняем, решаем, переводим в диалог — и показываем сервис.</p>
+</article>
+<article class="card">
+<h3>4) Контент-доказательства</h3>
+<p>Фото/видео/примеры работ/процесс/команда — чтобы клиенту было понятно: здесь нормально и безопасно.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section plan" id="plan">
+<div class="container">
+<div class="section-head"><h2>План 30/60/90 — чтобы это стало системой, а не «разовой прокачкой».</h2><div aria-hidden="true" class="section-illus-wrap"><img alt="" class="theme-art section-illus-img" data-src-dark="assets/illustrations/blocks/plan-dark.svg" data-src-light="assets/illustrations/blocks/plan-light.svg" decoding="async" loading="lazy" src="assets/illustrations/blocks/plan-dark.svg"/></div></div>
+<div class="plan-grid">
+<article class="card">
+<h3>0–30 дней: приводим в порядок</h3>
+<ul>
+<li>диагностика карточки + 2–5 конкурентов</li>
+<li>правки фундамента и витрины</li>
+<li>упаковка: смыслы, формулировки, структура услуг</li>
+<li>регламент ответов (включая негатив)</li>
+<li>старт процесса отзывов и контента</li>
+</ul>
+<p class="result">Итог: карточка стала понятной и «живой».</p>
+</article>
+<article class="card">
+<h3>31–60 дней: наращиваем доверие</h3>
+<ul>
+<li>добор отзывов под ключевые страхи клиента</li>
+<li>усиливаем фото/контент и витрину услуг</li>
+<li>закрываем слабые места по аналитике</li>
+<li>мониторинг отзывов/вопросов/правок</li>
+</ul>
+<p class="result">Итог: доверие растёт, негатив не «убивает» конверсию.</p>
+</article>
+<article class="card">
+<h3>61–90 дней: закрепляем и масштабируем</h3>
+<ul>
+<li>делаем процесс привычкой команды</li>
+<li>регулярный контент и качество ответов</li>
+<li>отчётность + гипотезы улучшений</li>
+<li>подготовка к спокойной поддержке</li>
+</ul>
+<p class="result">Итог: система работает стабильно, без «качелей».</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section deliverables" id="deliverables">
+<div class="container">
+<div class="section-head"><h2>Что вы получите на выходе</h2><div aria-hidden="true" class="section-illus-wrap"><img alt="" class="theme-art section-illus-img" data-src-dark="assets/illustrations/blocks/deliver-dark.svg" data-src-light="assets/illustrations/blocks/deliver-light.svg" decoding="async" loading="lazy" src="assets/illustrations/blocks/deliver-dark.svg"/></div></div>
+<p class="muted">Не «общие советы», а понятные материалы и система, которую можно внедрить.</p>
+<div class="solutions-grid">
+<article class="card">
+<h3>Аудит карточки и конкурентов</h3>
+<p>Чеклист правок с приоритетом: что исправить сначала, чтобы быстрее усилить доверие и конверсию.</p>
+</article>
+<article class="card">
+<h3>План на 30 дней</h3>
+<p>Пошаговый план работ: что делаем, в каком порядке, какие задачи можно отдать команде, а что — вести под ключ.</p>
+</article>
+<article class="card">
+<h3>Регламент ответов</h3>
+<p>Тон, структура, сроки, сценарии для позитива и негатива + набор готовых шаблонов, которые не выглядят «роботом».</p>
+</article>
+<article class="card">
+<h3>Процесс сбора отзывов</h3>
+<p>Сценарии и тексты для персонала/менеджеров, точки контакта, частота. Без накрутки — с понятной логикой и контролем.</p>
+</article>
+<article class="card">
+<h3>Контент‑пакет для карточки</h3>
+<p>Что и как показать в фото/видео, чтобы снять страхи клиента: процесс, команда, примеры, «как у вас устроено».</p>
+</article>
+<article class="card">
+<h3>Контроль и отчётность</h3>
+<p>Ежемесячный отчёт без воды: что сделали, что изменилось, что делаем дальше. Показываю цифры по карточке:</p><ul class="mini-list"><li>посещения карточки и источники</li><li>позиции / видимость по ключам</li><li>звонки</li><li>построенные маршруты</li><li>переходы на сайт и в мессенджеры</li><li>переходы в соцсети (если подключены)</li></ul><p><strong>И главное:</strong> объясняю, почему цифры такие и что надо сделать, чтобы они росли.</p></article>
+</div>
+</div>
+</section>
+<section class="section pricing" id="pricing">
+<div class="container">
+<div class="bundle-head">
+<h2>Тарифы</h2>
+<p class="muted">Сначала — короткий разбор. Потом — предлагаю формат и стоимость. Так честнее и точнее.</p>
+</div>
+<div class="bundle-subhead" id="tariffs">
+<h3>5 уровней включённости</h3>
+<p class="muted">Начать можно с бесплатного разбора: вы сразу поймёте, где карточка проигрывает выбор. Основной тариф — «Приоритет» (максимальная включённость).</p>
+</div>
+<div class="tariffs-grid bundle-grid">
+<article class="card tariff-card col-4">
+<div class="tariff-meta">
+<span class="pill"><span class="pill-dot"></span>Бесплатно</span>
+</div>
+<h3>Разбор</h3>
+<p class="muted">15–20 минут: карточка + конкуренты + список правок с приоритетом.</p>
+<ul>
+<li>что режет доверие прямо сейчас</li>
+<li>3–5 быстрых правок с максимальным эффектом</li>
+<li>что делать в первые 30 дней</li>
+</ul>
+<p class="tag">Подходит: «хочу понять, в чём проблема»</p>
+</article>
+<article class="card tariff-card col-4">
+<div class="tariff-meta">
+<span class="pill"><span class="pill-dot"></span>Быстрые правки</span>
+</div>
+<h3>Порядок</h3>
+<p class="muted">Наводим чистоту и делаем карточку понятной: факты, витрина, формулировки.</p>
+<ul>
+<li>фундамент (категории, атрибуты, контакты)</li>
+<li>упаковка: описание, услуги, структура</li>
+<li>шаблоны и регламент ответов</li>
+</ul>
+<p class="tag">Подходит: «хочу быстро перестать проигрывать»</p>
+</article>
+<article class="card tariff-card col-4">
+<div class="tariff-meta">
+<span class="pill"><span class="pill-dot"></span>Оптимально</span>
+</div>
+<h3>Система</h3>
+<p class="muted">Полный цикл: карточка + отзывы + ответы + контент + контроль. Без суеты.</p>
+<ul>
+<li>всё из «Порядок»</li>
+<li>стратегия отзывов + материалы для команды</li>
+<li>контент‑план и контроль публикаций</li>
+</ul>
+<p class="tag">Подходит: «хочу устойчивый результат»</p>
+</article>
+<div class="tariffs-divider col-12"><span>Дальше — ежемесячное сопровождение</span></div>
+<article class="card tariff-card col-6">
+<div class="tariff-meta">
+<span class="pill"><span class="pill-dot"></span>Регулярно</span>
+</div>
+<h3>Рост</h3>
+<p class="muted">Под конкурентные ниши: регулярное усиление доверия и конверсии.</p>
+<ul>
+<li>всё из «Система»</li>
+<li>усиление витрины и формулировок под спрос</li>
+<li>мониторинг и реакция: отзывы/вопросы/изменения</li>
+</ul>
+<p class="tag">Подходит: «хочу стабильно обгонять»</p>
+</article>
+<article class="card tariff-card col-6">
+<div class="tariff-meta">
+<span class="pill"><span class="pill-dot"></span>Основной тариф</span>
+</div>
+<h3>Приоритет</h3>
+<p class="muted">Максимальная скорость и внимание к деталям: больше итераций, больше контроля.</p>
+<ul>
+<li>всё из «Рост»</li>
+<li>приоритет по правкам и коммуникации</li>
+<li>больше контент‑задач и проверок</li>
+</ul>
+<p class="tag">Подходит: «нужно быстро и без ошибок»</p>
+</article>
+<article class="card tariff-standards col-12">
+<h3>Как я работаю (без риска для карточки)</h3>
+<p class="muted">Без фейков, без «пачек одинаковых отзывов», без схем, которые потом прилетают банами. Мы строим доверие так, чтобы оно держалось.</p>
+<ul class="standards-list">
+<li>всё согласуем: что делаем, зачем и какой эффект ждём</li>
+<li>коммуникация коротко и по делу (чат + созвоны по необходимости)</li>
+<li>регулярный отчёт: сделано / изменилось / дальше</li>
+</ul>
+</article>
+</div>
+<p class="pricing-note">Важно: я не продаю «10 отзывов». Я продаю систему и контроль репутации.</p>
+</div>
+</section>
+<section class="section services" id="services">
+<div class="container">
+<h2>Что еще могу предложить?</h2>
+<p class="muted">Дополнительные услуги, которые усиливают доверие и конверсию после перехода с карточки: контент, отзывы, аналитика, вторые площадки и упаковка коммуникаций.</p>
+<div class="services-cards">
+<article class="card service-card">
+<div class="service-pill"><span class="pill"><span aria-hidden="true" class="pill-dot"></span>Упаковка / дизайн VK / TG</span></div>
+<h3>Продвижение и реклама (по геоперфомансу)</h3>
+<p>Если нужно ускорить: подключаем продвижение в Яндекс Картах / Директе и ведём по геоперфомансу — режем кампании по районам/городам, переносим бюджет туда, где идут заявки.</p>
+<ul class="mini-list">
+<li>гео‑таргетинг: города, районы, радиус</li>
+<li>разные офферы под разные города</li>
+<li>контроль ставок и отключение «пустых» зон</li>
+<li>отчёт: CPC/лид/звонки по географии</li>
+</ul>
+</article>
+<article class="card service-card">
+<div class="service-pill"><span class="pill"><span aria-hidden="true" class="pill-dot"></span>2 площадки</span></div>
+<h3>2ГИС / Google</h3>
+<p>Если задача шире Яндекса — подключаю вторую площадку и веду по тем же принципам.</p>
+</article>
+<article class="card service-card">
+  <div class="service-pill"><span class="pill"><span aria-hidden="true" class="pill-dot"></span>Отзывы</span></div>
+  <h3>Система сбора отзывов (без фейков)</h3>
+  <p>Скрипты для персонала, точки контакта, QR/ссылки, темы отзывов под страхи клиента — чтобы отзывы реально продавали.</p>
+</article>
+<article class="card service-card">
+  <div class="service-pill"><span class="pill"><span aria-hidden="true" class="pill-dot"></span>Ответы</span></div>
+  <h3>Ответы на отзывы под ключ</h3>
+  <p>Позитив — персонально и продающе (без спама). Негатив — быстро, спокойно, с фиксацией решения.</p>
+</article>
+<article class="card service-card">
+  <div class="service-pill"><span class="pill"><span aria-hidden="true" class="pill-dot"></span>Негатив</span></div>
+  <h3>Оспаривание нарушающих отзывы</h3>
+  <p>Если отзыв нарушает правила (фейк, мат, персональные данные) — готовлю аргументы и провожу оспаривание.</p>
+</article>
+<article class="card service-card">
+  <div class="service-pill"><span class="pill"><span aria-hidden="true" class="pill-dot"></span>Актуальность</span></div>
+  <h3>Цены, акции, график — чтобы карточка не «мертвая»</h3>
+  <p>Обновляю важные факты: услуги/категории, цены/диапазоны, акции, время работы, описание — чтобы не терять клиента на первом экране.</p>
+</article>
+<article class="card service-card">
+  <div class="service-pill"><span class="pill"><span aria-hidden="true" class="pill-dot"></span>360°</span></div>
+  <h3>Виртуальный тур 360° (Санкт‑Петербург)</h3>
+  <p>Снимаю и собираю 360‑тур для карточки: интерьер, вход, навигация. Работает как “доказательство”, что вы настоящие.</p>
+  <p class="muted">Только Санкт‑Петербург и ближайшие районы.</p>
+</article>
+
+<article class="card service-card service-card--full">
+<h3>Если нужен сайт</h3>
+<ul class="extras-list">
+<li>лендинг «после Карт»: структура, блоки доверия, CTA</li>
+<li>минимальное SEO: заголовки/мета/структура услуг</li>
+<li>быстрый аудит текущего сайта (ошибки, скорость, мобильная версия)</li>
+</ul>
+<p class="muted">Подключаю по необходимости — чтобы после карточки клиент попадал на нормальную страницу.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section process" id="process">
+<div class="container">
+<div class="section-head"><h2>Как работаем (без магии)</h2><div aria-hidden="true" class="section-illus-wrap"><img alt="" class="theme-art section-illus-img" data-src-dark="assets/illustrations/blocks/process-dark.svg" data-src-light="assets/illustrations/blocks/process-light.svg" decoding="async" loading="lazy" src="assets/illustrations/blocks/process-dark.svg"/></div></div>
+<div class="process-grid">
+<ul>
+<li><strong>Старт</strong> — цели, география, доступы, фиксируем «точку А»</li>
+<li><strong>Аудит</strong> — где проигрываем выбор (факты, витрина, отзывы, контент)</li>
+<li><strong>План</strong> — приоритеты на 30 дней: что делаем первым и почему</li>
+<li><strong>Внедрение</strong> — правки карточки, регламенты, контент, ответы</li>
+<li><strong>Контроль</strong> — мониторинг и реакция: отзывы/вопросы/изменения</li>
+<li><strong>Отчёт</strong> — без воды: посещения, позиции, звонки, маршруты, переходы. Если подключали рекламу — отдельно показываю эффективность по районам/городам.</li>
+</ul>
+<div class="process-note">
+<p><strong>Коммуникация:</strong> чат в Telegram + короткие созвоны по необходимости.</p>
+<p><strong>Сроки:</strong> первые улучшения обычно видны в первые недели, устойчивость — на дистанции 60–90 дней.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section honesty" id="honesty">
+<div class="container">
+<div class="section-head"><h2>Честно про ожидания</h2><div aria-hidden="true" class="section-illus-wrap"><img alt="" class="theme-art section-illus-img" data-src-dark="assets/illustrations/blocks/honesty-dark.svg" data-src-light="assets/illustrations/blocks/honesty-light.svg" decoding="async" loading="lazy" src="assets/illustrations/blocks/honesty-dark.svg"/></div></div>
+<div class="honesty-grid">
+<div>
+<h3>Что я не продаю</h3>
+<ul>
+<li>«накрутим отзывы пачкой»</li>
+<li>«сделаю 5.0 за неделю»</li>
+<li>«удалю весь негатив»</li>
+<li>«гарантирую заявки»</li>
+</ul>
+<p class="muted"><strong>Про рекламу:</strong> не запускаю «на всю Россию» одной кампанией. Режем по городам/районам и считаем эффективность — это и есть геоперфоманс.</p>
+<p class="muted">Алгоритмы и модерация меняются. А отзывы — это живые люди. Обещать тут «железобетон» — врать.</p>
+</div>
+<div>
+<h3>Что вы точно получите</h3>
+<ul>
+<li>аккуратную работу в рамках правил площадок</li>
+<li>прозрачные шаги и понятные приоритеты</li>
+<li>регламент ответов и защиты от негатива</li>
+<li>контроль и отчётность без воды</li>
+</ul>
+<p>Если сервис реально хромает — мы это увидим. И вместо «заколдовать» репутацию, закроем причину.</p>
+</div>
+</div>
+<div class="about-me card">
+<div class="about-me__media">
+<picture>
+<source srcset="assets/about/nikolay.webp" type="image/webp"/>
+<img alt="Николай Панин" decoding="async" height="640" loading="lazy" src="assets/about/nikolay.png" width="640"/>
+</picture>
+</div>
+\1
+<div class=\"about-badges\">
+  <span class=\"about-badge\">10+ лет в дизайне</span>
+  <span class=\"about-badge\">Реклама с 2019</span>
+  <span class=\"about-badge\">GeoPerformance с 2025</span>
+  <span class=\"about-badge\">SERM на картах</span>
+</div>
+<div class="about-badges" aria-label="Коротко обо мне">
+  <span class="badge">СПб</span>
+  <span class="badge">10+ лет в дизайне</span>
+  <span class="badge">реклама и аналитика с 19</span>
+  <span class="badge">геоперфоманс с 2025</span>
+</div>
+<p>Всё началось с фразы «умеешь? помоги» — и понеслось.</p>
+<ul class="mini-list">
+<li>с 15 лет — дизайн: Photoshop, 3ds Max, визуал и упаковка</li>
+<li>в 17 — собрал и раскрутил несколько сообществ ВК/ТГ</li>
+<li>в 18 — сделал первый продающий сайт</li>
+<li>с 19 — настройка рекламы и аналитика: что даёт лид, а что просто «красиво»</li>
+<li>долго работал в «компьютерной» сфере и искал свою нишу в IT</li>
+</ul>
+<p class="muted"><strong>С 2025 года</strong> — профессионально веду диджитал‑геоперфоманс и продвижение на картах: чтобы вас выбирали рядом, а не «когда‑нибудь потом».</p>
+<p class="about-why">Почему я этим занимаюсь: это самый прямой способ приводить клиентов «рядом» — без сказок и без лишних экранов.</p>
+<p class="punchline"><strong>Не “оформитель”.</strong> Я смотрю на карточку как на продажи: что мешает выбору, что ускоряет звонки/маршруты/записи — и делаю.</p>
+</div>
+</div>
+<div class="fit-grid"><article class="card"><h3>Кому подходит</h3><ul class="mini-list"><li>есть офлайн‑точка или зона обслуживания на карте</li><li>нужен стабильный поток обращений: звонки / маршруты / записи</li><li>важна репутация: рейтинг, отзывы, ответы</li><li>ниши: бьюти, медицина, сервисы, юристы, общепит, локальные услуги и т.д.</li></ul></article><article class="card"><h3>Кому не подойдёт</h3><ul class="mini-list"><li>у вас нет точки/географии — всё полностью онлайн и «на карте» вас не ищут</li><li>вы ждёте гарантии «топ‑1 завтра» и волшебных кнопок</li><li>нет даже первых клиентов/обращений — сначала надо собрать базу (обсуждаемо, но это другой старт)</li></ul></article></div>
+</div>
+</section>
+<section class="section faq" id="faq">
+<div class="container">
+<div class="section-head"><h2>FAQ</h2><div aria-hidden="true" class="section-illus-wrap"><img alt="" class="theme-art section-illus-img" data-src-dark="assets/illustrations/blocks/faq-dark.svg" data-src-light="assets/illustrations/blocks/faq-light.svg" decoding="async" loading="lazy" src="assets/illustrations/blocks/faq-dark.svg"/></div></div>
+<div class="faq-grid">
+<details class="card faq-item">
+<summary class="faq-summary">Что конкретно вы делаете в SERM, кроме «отзывов»?</summary>
+<div class="faq-content"><p>Выстраиваю систему доверия на картах: упаковка карточки (услуги/категории/описание/контент) → стратегия отзывов → ответы на негатив → мониторинг → отчётность.</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">С каких площадок начинаем и почему?</summary>
+<div class="faq-content"><p>Начинаем там, где у вас больше трафика и денег (часто Яндекс). 2ГИС/Google подключаю параллельно, если там есть аудитория или задача.</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Что такое геоперфоманс и зачем он мне?</summary>
+<div class="faq-content">
+<p>Это когда реклама и продвижение настроены <strong>с учётом географии</strong>: разные города/районы дают разную цену клика и разную конверсию.</p>
+<ul class="mini-list">
+<li>режем кампании по городам или хотя бы по районам</li>
+<li>перераспределяем бюджет туда, где есть заявки</li>
+<li>смотрим Метрику: где конверсия, а где слив</li>
+</ul>
+<p>Итог: меньше пустых расходов и больше обращений из «своей» аудитории.</p>
+</div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Вы можете гарантировать рост клиентов / заявок / продаж?</summary>
+<div class="faq-content"><p>Продажи гарантировать нельзя — влияют цена, сезон, конкуренты и обработка обращений. Гарантирую процесс: план, регулярные действия, контроль метрик и прозрачные отчёты.</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Какие результаты считаем нормальными и как их измеряем?</summary>
+<div class="faq-content"><p>Смотрим не «ощущения», а цифры:</p><ul><li>показы/просмотры</li><li>звонки/клики/переходы</li><li>конверсия «просмотр → действие»</li><li>рейтинг и качество отзывов</li><li>доля негатива и скорость реакции</li></ul><p class="muted">Плюс фиксируем «до/после».</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Сколько времени нужно, чтобы увидеть первые сдвиги?</summary>
+<div class="faq-content"><p>Обычно: 7–14 дней — порядок в карточке и первые сдвиги по действиям; 30 дней — стабилизация; 60–90 дней — системный эффект (доверие + отзывы + конверсия).</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Что важнее сначала: упаковка карточки или отзывы?</summary>
+<div class="faq-content"><p>Если карточка «сырая», отзывы работают хуже. Почти всегда сначала фундамент (упаковка), потом — активная стратегия отзывов.</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Почему у нас хороший рейтинг, но звонков мало?</summary>
+<div class="faq-content"><p>Часто причина в витрине: слабые фото, неясно «что вы делаете» за 5 секунд, услуги/категории не попадают в спрос, нет сильного УТП и понятного следующего шага.</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Что вы будете менять в карточке?</summary>
+<div class="faq-content"><p>То, что влияет на выбор: услуги/категории (чтобы попадать в выдачу), описание/УТП, фото/видео и порядок контента, ответы на вопросы, оформление «под конверсию».</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Какие материалы нужны от нас на старте?</summary>
+<div class="faq-content"><p>Минимум: ссылка на карточку, список услуг + цены/диапазоны (как есть), 10–30 фото (любые), ваши сильные стороны (скорость/гарантии/особенности).</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Кто отвечает на отзывы: вы или администратор?</summary>
+<div class="faq-content"><p>Два варианта: веду ответы под ключ или даю регламент/шаблоны и контролирую качество, а публикует ваш администратор.</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Как вы работаете с негативом и как быстро реагируете?</summary>
+<div class="faq-content"><p>Негатив не лежит «неделю»: обычно реагируем в течение 24 часов. В большинстве случаев — грамотный ответ + фиксация решения. Удаление — только если есть основания по правилам.</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Вы можете удалить «несправедливый» отзыв?</summary>
+<div class="faq-content"><p>Могу подготовить и провести оспаривание, если есть реальные основания (фейк, мат, персональные данные и т.п.). «Просто не нравится» — не основание.</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Какие риски: фильтры, снятие отзывов, бан?</summary>
+<div class="faq-content"><p>Риски появляются при «в лоб»: резкие всплески, одинаковые тексты, подозрительные аккаунты. Работаю аккуратно: ровный темп, разные сценарии, человеческая логика, без серых схем.</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Как собираете новые отзывы безопасно?</summary>
+<div class="faq-content"><p>Через систему запросов после услуги/покупки: скрипты для персонала, QR/ссылки, правильные точки контакта. Заранее задаём темы отзывов (сервис/качество/сроки/гарантия), чтобы это работало на выбор.</p></div>
+</details>
+<details class="card faq-item">
+<summary class="faq-summary">Как часто отчёты и что в них будет?</summary>
+<div class="faq-content"><p>Обычно 1–4 раза в месяц (зависит от формата). В отчёте: что сделали → что изменилось в цифрах → выводы → план следующего периода. По инцидентам/негативу — сразу.</p></div>
+</details>
+</div>
+</div>
+</section>
+<section class="section cta" id="cta">
+<div class="container">
+<div class="cta-top">
+<h2>Давайте работать вместе</h2>
+<p class="muted">Оставьте имя и нишу — отвечу в Telegram и скажу, что исправить в карточке, чтобы вас выбирали чаще.</p>
+</div>
+<div class="cta-inner">
+<div class="cta-card card cta-card--large">
+<div class="card-head">
+<h3>Связь со мной</h3>
+</div>
+<form autocomplete="on" class="cta-form cta-form--large" id="tgForm">
+<div class="cta-form__row">
+<label>
+<span>Имя</span>
+<input id="tgName" name="name" placeholder="Ваше имя" required="" type="text"/>
+</label>
+<label>
+<span>Ниша</span>
+<input id="tgNiche" name="niche" placeholder="Стоматология / автосервис / салон" required="" type="text"/>
+</label>
+</div>
+<button class="btn btn-primary btn-block" data-track="tg_form" id="tgSend" type="button">Связаться</button>
+<div aria-live="polite" class="form-status" id="formStatus"></div>
+</form>
+</div>
+<div aria-hidden="true" class="cta-visual">
+<img alt="" class="theme-art cta-visual__img" data-src-dark="assets/illustrations/cta-visual-dark.svg" data-src-light="assets/illustrations/cta-visual-light.svg" decoding="async" loading="lazy" src="assets/illustrations/cta-visual-dark.svg"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<p>© 2026 Николай Панин. NP.Maps — репутация на картах.</p>
+<div class="footer-contacts">
+<p>Telegram: <a data-copy="https://t.me/np_maps" href="https://t.me/np_maps" rel="noreferrer" target="_blank">@np_maps</a></p>
+<p>Телефон: <a data-copy="+7 963 318 1816" data-track="phone_click" href="tel:+79633181816">+7 963 318 1816</a></p>
+<p>Канал с кейсами: <a href="https://t.me/np_serm" rel="noreferrer" target="_blank">t.me/np_serm</a></p>
+</div>
+</div>
+</footer>
+<div aria-hidden="true" class="floating-cta" data-visible="false" id="floatingCta">
+<a aria-label="Разбор" class="fab" data-track="fab_cta" href="#cta">Разбор</a>
+</div>
+<button aria-label="Наверх" class="btn btn-top" id="backToTop" type="button">
+    ↑
+  </button>
+<div aria-atomic="true" aria-live="polite" class="toast" id="toast" role="status">
+<span class="toast__message">Скопировано</span>
+</div>
+<!-- Failsafe: theme toggle must work even if main.js is blocked/cached -->
+<script>
+  (function () {
+    var btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    var root = document.documentElement;
+    var key = 'theme';
+    function apply(theme) {
+      var t = (theme === 'light' || theme === 'dark') ? theme : 'dark';
+      root.setAttribute('data-theme', t);
+      if (document.body) document.body.setAttribute('data-theme', t);
+      try { localStorage.setItem(key, t); } catch (e) {}
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', t === 'dark' ? '#0c0f16' : '#fbf7f1');
+
+      // swap theme illustrations (dark/light)
+      try {
+        document.querySelectorAll('img[data-src-dark][data-src-light]').forEach(function (img) {
+          var next = (t === 'dark') ? img.getAttribute('data-src-dark') : img.getAttribute('data-src-light');
+          if (next && img.getAttribute('src') !== next) img.setAttribute('src', next);
+        });
+      } catch (e2) {}
+    }
+
+    btn.addEventListener('click', function () {
+      var current = root.getAttribute('data-theme') || 'dark';
+      apply(current === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>
+<script>
+  (function (V) {
+    V = V || '20260120-3';
+    var s1 = document.createElement('script');
+    s1.defer = true;
+    s1.src = 'assets/main.min.js?v=' + V;
+    document.body.appendChild(s1);
+
+    var s2 = document.createElement('script');
+    s2.defer = true;
+    s2.src = 'assets/scrollwave.js?v=' + V;
+    document.body.appendChild(s2);
+  })(window.__ASSET_V__);
+</script>
+</body>
+</html>

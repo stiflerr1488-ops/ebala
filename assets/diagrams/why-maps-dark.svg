@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" fill="none">
+  <!-- outer card -->
+  <rect x="1" y="1" width="1198" height="218" rx="18" fill="#121828" fill-opacity="0.65" stroke="#2a3347"/>
+
+  <!-- nodes -->
+  <g>
+    <rect x="44" y="58" width="248" height="104" rx="16" fill="#0f1422" stroke="#2a3347"/>
+    <rect x="332" y="58" width="248" height="104" rx="16" fill="#0f1422" stroke="#2a3347"/>
+    <rect x="620" y="58" width="248" height="104" rx="16" fill="#0f1422" stroke="#2a3347"/>
+    <rect x="908" y="58" width="248" height="104" rx="16" fill="#0f1422" stroke="#2a3347"/>
+    </g>
+
+  <!-- arrows -->
+  <g stroke="#2a3347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 292 110 H 322"/>
+    <path d="M 580 110 H 610"/>
+    <path d="M 868 110 H 898"/>
+    <path d="M 322 110 l -10 -8"/>
+    <path d="M 322 110 l -10 8"/>
+    <path d="M 610 110 l -10 -8"/>
+    <path d="M 610 110 l -10 8"/>
+    <path d="M 898 110 l -10 -8"/>
+    <path d="M 898 110 l -10 8"/>
+  </g>
+
+  <!-- caption -->
+  </svg>

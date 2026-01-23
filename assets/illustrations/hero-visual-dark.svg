@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="700" viewBox="0 0 900 700" fill="none">
+  <!-- soft blobs -->
+  <circle cx="690" cy="140" r="170" fill="#FFFFFF" opacity="0.05"/>
+  <circle cx="760" cy="520" r="220" fill="#FFFFFF" opacity="0.04"/>
+  <circle cx="520" cy="610" r="170" fill="#FFFFFF" opacity="0.03"/>
+
+  <!-- phone body -->
+  <rect x="458" y="70" width="360" height="560" rx="54" fill="#FFFFFF" opacity="0.05"/>
+  <rect x="458" y="70" width="360" height="560" rx="54" stroke="#FFFFFF" stroke-opacity="0.22"/>
+
+  <!-- screen -->
+  <rect x="486" y="110" width="304" height="480" rx="36" fill="#FFFFFF" opacity="0.04"/>
+  <rect x="486" y="110" width="304" height="480" rx="36" stroke="#FFFFFF" stroke-opacity="0.12"/>
+
+  <!-- notch -->
+  <rect x="592" y="92" width="92" height="18" rx="9" fill="#0C0F16" opacity="0.55"/>
+  <circle cx="576" cy="101" r="5" fill="#0C0F16" opacity="0.55"/>
+
+  <!-- map area -->
+  <rect x="506" y="134" width="264" height="190" rx="24" fill="#FFFFFF" opacity="0.03"/>
+  <rect x="506" y="134" width="264" height="190" rx="24" stroke="#FFFFFF" stroke-opacity="0.10"/>
+  <path d="M534 152v154M606 152v154M678 152v154" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <path d="M514 182h248M514 234h248M514 286h248" stroke="#FFFFFF" stroke-opacity="0.08"/>
+
+  <!-- pin -->
+  <path d="M638 206c0 38-34 70-34 70s-34-32-34-70c0-18 15-32 34-32s34 14 34 32Z" fill="#FF3B30" opacity="0.92"/>
+  <circle cx="604" cy="206" r="12" fill="#FFFFFF" opacity="0.85"/>
+
+  <!-- list cards -->
+  <rect x="506" y="342" width="264" height="72" rx="20" fill="#FFFFFF" opacity="0.05"/>
+  <rect x="520" y="360" width="108" height="12" rx="6" fill="#FFFFFF" opacity="0.16"/>
+  <rect x="520" y="382" width="160" height="10" rx="5" fill="#FFFFFF" opacity="0.10"/>
+  <rect x="520" y="402" width="130" height="10" rx="5" fill="#FFFFFF" opacity="0.10"/>
+
+  <rect x="506" y="426" width="264" height="72" rx="20" fill="#FFFFFF" opacity="0.05"/>
+  <rect x="520" y="444" width="124" height="12" rx="6" fill="#FFFFFF" opacity="0.16"/>
+  <rect x="520" y="466" width="180" height="10" rx="5" fill="#FFFFFF" opacity="0.10"/>
+  <rect x="520" y="486" width="144" height="10" rx="5" fill="#FFFFFF" opacity="0.10"/>
+
+  <!-- stars -->
+  <g opacity="0.55" fill="#FFFFFF">
+    <path d="M722 364l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2 6-12Z"/>
+    <path d="M744 372l5 9 10 2-7 7 2 10-10-5-10 5 2-10-7-7 10-2 5-9Z" opacity="0.6"/>
+  </g>
+
+  <!-- action pills -->
+  <rect x="506" y="512" width="156" height="44" rx="22" fill="#FFFFFF" opacity="0.06"/>
+  <rect x="672" y="512" width="98" height="44" rx="22" fill="#FFFFFF" opacity="0.06"/>
+  <circle cx="532" cy="534" r="8" fill="#34C759" opacity="0.95"/>
+  <circle cx="706" cy="534" r="8" fill="#2AABEE" opacity="0.95"/>
+</svg>

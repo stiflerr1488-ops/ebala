@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180">
+  <defs>
+    </defs>
+  <rect x="20" y="34" rx="16" ry="16" width="160" height="112" class="box"/>
+  <rect x="220" y="34" rx="16" ry="16" width="160" height="112" class="box"/>
+  <rect x="420" y="34" rx="16" ry="16" width="160" height="112" class="box"/>
+  <rect x="620" y="34" rx="16" ry="16" width="120" height="112" class="box"/>
+  <path d="M180 90 H214" class="arr"/>
+  <path d="M380 90 H414" class="arr"/>
+  <path d="M580 90 H614" class="arr"/>
+  <path d="M214 90 l-8 -6 m8 6 l-8 6" class="arr"/>
+  <path d="M414 90 l-8 -6 m8 6 l-8 6" class="arr"/>
+  <path d="M614 90 l-8 -6 m8 6 l-8 6" class="arr"/>
+</svg>

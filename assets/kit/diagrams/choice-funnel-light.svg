@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="170" viewBox="0 0 920 170">
+  <defs>
+    </defs>
+  <rect x="10" y="18" rx="16" ry="16" width="210" height="134" class="card"/>
+  <rect x="240" y="18" rx="16" ry="16" width="210" height="134" class="card"/>
+  <rect x="470" y="18" rx="16" ry="16" width="210" height="134" class="card"/>
+  <rect x="700" y="18" rx="16" ry="16" width="210" height="134" class="card"/>
+  <line x1="220" y1="85" x2="240" y2="85" class="arr"/>
+  <line x1="450" y1="85" x2="470" y2="85" class="arr"/>
+  <line x1="680" y1="85" x2="700" y2="85" class="arr"/>
+  <polyline points="236,78 240,85 236,92" fill="none" class="arr"/>
+  <polyline points="466,78 470,85 466,92" fill="none" class="arr"/>
+  <polyline points="696,78 700,85 696,92" fill="none" class="arr"/>
+</svg>
